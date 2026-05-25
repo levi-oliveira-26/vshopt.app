@@ -1,0 +1,10 @@
+Objetivo: Loja virtual de conteúdo para produtores e engenheiros de áudio;
+
+ - Inicialmente, nada será vendido, apenas distribuído;
+ - Produtos iniciais: DAW, VST, E-BOOK, DRUM KIT, SAMPLE PACK, PRESETS PACK
+ - Biblioteca de produtos que podem ou não estar instalados (como Steam)
+ - Vitrine de produtos
+
+ Como usuário eu devo:
+ - Observar a vitrine de produtos;
+ - Filtrar por categorias, preço (menor ao maior e maior ao menor)
