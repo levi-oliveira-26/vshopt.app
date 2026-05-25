@@ -39,11 +39,11 @@
                         <p>Pacotes de presets, sample packs e plugins selecionados para acelerar sua criação.</p>
                         <div class="hero-stats">
                             <div>
-                                <strong>120+</strong>
-                                <span>Recursos</span>
+                                <strong th:text="${produtos.size()}">120+</strong>
+                                <span>Produtos</span>
                             </div>
                             <div>
-                                <strong>5+</strong>
+                                <strong th:text="${categorias.size()}">5+</strong>
                                 <span>Categorias</span>
                             </div>
                         </div>
@@ -58,52 +58,44 @@
                     <span class="eyebrow">Produtos em destaque</span>
                     <h2>Vitrine de lançamentos e best-sellers</h2>
                 </div>
+
+                <form class="product-filter" th:action="@{/}" method="get">
+                    <div class="filter-group">
+                        <label>
+                            Categoria
+                            <select name="categoria">
+                                <option value="" th:selected="${categoria == ''}">Todas</option>
+                                <option th:each="cat : ${categorias}"
+                                        th:value="${cat}"
+                                        th:text="${cat}"
+                                        th:selected="${cat == categoria}">
+                                </option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="filter-group">
+                        <label>
+                            Ordenação
+                            <select name="ordenacao">
+                                <option value="" th:selected="${ordenacao == ''}">Sem ordenação</option>
+                                <option value="asc" th:selected="${ordenacao == 'asc'}">Preço: menor ao maior</option>
+                                <option value="desc" th:selected="${ordenacao == 'desc'}">Preço: maior ao menor</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button class="button button-secondary" type="submit">Aplicar</button>
+                </form>
+
                 <div class="product-grid">
-                    <article class="product-card">
-                        <div class="product-image product-image-ebook"></div>
+                    <article class="product-card" th:each="produto : ${produtos}">
+                        <div th:class="${'product-image ' + #strings.replace(produto.categoria.toLowerCase(), ' ', '-')}"></div>
                         <div class="product-copy">
-                            <span class="product-category">E-book</span>
-                            <h3>Guia de Mixagem Completa</h3>
-                            <p>Domine a mixagem em DAWs com técnicas validadas por engenheiros de referência.</p>
+                            <span class="product-category" th:text="${produto.categoria}">Categoria</span>
+                            <h3 th:text="${produto.nome}">Nome do produto</h3>
+                            <p th:text="${produto.descricao}">Descrição do produto</p>
                         </div>
                         <div class="product-footer">
-                            <strong>R$ 49,90</strong>
-                            <a class="button button-tertiary" href="#">Comprar</a>
-                        </div>
-                    </article>
-                    <article class="product-card">
-                        <div class="product-image product-image-plugin"></div>
-                        <div class="product-copy">
-                            <span class="product-category">Plugin</span>
-                            <h3>EQ Analógico Vintage</h3>
-                            <p>Plugin de equalização inspirado em consoles clássicos para caráter e controle tonal.</p>
-                        </div>
-                        <div class="product-footer">
-                            <strong>R$ 79,90</strong>
-                            <a class="button button-tertiary" href="#">Comprar</a>
-                        </div>
-                    </article>
-                    <article class="product-card">
-                        <div class="product-image product-image-course"></div>
-                        <div class="product-copy">
-                            <span class="product-category">Curso</span>
-                            <h3>Produção de Beats Profissionais</h3>
-                            <p>Aprenda fluxo de trabalho, arranjos e mixagem para criar instrumentais impactantes.</p>
-                        </div>
-                        <div class="product-footer">
-                            <strong>R$ 119,90</strong>
-                            <a class="button button-tertiary" href="#">Comprar</a>
-                        </div>
-                    </article>
-                    <article class="product-card">
-                        <div class="product-image product-image-sample"></div>
-                        <div class="product-copy">
-                            <span class="product-category">Sample Pack</span>
-                            <h3>Kit de Bateria Eletrônica</h3>
-                            <p>Samples limpos, punchy e fáceis de encaixar em produções modernas.</p>
-                        </div>
-                        <div class="product-footer">
-                            <strong>R$ 39,90</strong>
+                            <strong th:text="${'R$ ' + produto.preco}">R$ 0,00</strong>
                             <a class="button button-tertiary" href="#">Comprar</a>
                         </div>
                     </article>

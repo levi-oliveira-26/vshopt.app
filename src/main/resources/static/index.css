@@ -271,8 +271,51 @@ a {
   background-position: center;
 }
 
-.product-image-ebook {
+.product-image.e-book {
   background: linear-gradient(135deg, #4f46e5, #2563eb);
+}
+
+.product-image.plugin {
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+}
+
+.product-image.curso {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
+.product-image.sample-pack {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+}
+
+.product-image.presets {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+}
+
+.product-filter {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.product-filter .filter-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.product-filter label {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.product-filter select {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: var(--text);
 }
 
 .product-image-plugin {
