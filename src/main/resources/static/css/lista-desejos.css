@@ -1,0 +1,383 @@
+/* Lista de Desejos */
+
+.desejos-container {
+  min-height: 100vh;
+}
+
+.desejos-header {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  padding: 3rem 0;
+  text-align: center;
+  color: var(--bg);
+  margin-bottom: 2rem;
+}
+
+.desejos-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.desejos-header p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.9;
+}
+
+.desejos-content {
+  padding: 0 0 3rem 0;
+}
+
+.desejos-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.total-items {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.view-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-btn {
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.view-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+.toolbar-right {
+  flex: 1;
+  min-width: 300px;
+  justify-content: flex-end;
+}
+
+.search-input,
+.sort-select {
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.sort-select {
+  cursor: pointer;
+}
+
+.desejos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.desejo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.desejo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--surface-soft);
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.desejo-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.btn-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.btn-heart:not(.liked) {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.desejo-card:hover .btn-heart:not(.liked) {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-heart.liked {
+  animation: heartBeat 0.5s ease;
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.desejo-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay .btn {
+  width: 100%;
+  max-width: 150px;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-autor {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-preco {
+  margin: 1rem 0;
+}
+
+.preco-atual {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.preço-original {
+  display: block;
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.card-desconto {
+  display: block;
+  color: #22c55e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.card-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  font-size: 0.85rem;
+}
+
+.stars {
+  color: #f97316;
+}
+
+.reviews {
+  color: var(--text-muted);
+}
+
+.card-info {
+  margin-bottom: 1rem;
+}
+
+.availability {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.em-estoque {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.card-actions .btn-outline {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.card-meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 1rem 1.5rem 0;
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+}
+
+.added-date {
+  margin: 0;
+}
+
+.desejos-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+}
+
+.empty-icon + h2 {
+  margin: 0;
+}
+
+.desejos-resumo {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.resumo-card {
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.resumo-card h2 {
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.resumo-info {
+  background: rgba(56, 189, 248, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.resumo-info p {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resumo-info p:first-child {
+  margin-top: 0;
+}
+
+.resumo-info p:last-child {
+  margin-bottom: 0;
+}
+
+.resumo-card .btn {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.resumo-card .btn:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .desejos-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-right {
+    flex: none;
+    min-width: auto;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .desejos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}
