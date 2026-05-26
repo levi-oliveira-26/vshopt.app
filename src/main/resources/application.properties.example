@@ -1,0 +1,12 @@
+spring.application.name=app
+
+# Exemplo de configuração (NÃO commit este arquivo com credenciais reais)
+# Copie como application.properties localmente e substitua os valores.
+
+app.jdbc.url=jdbc:postgresql://localhost:5432/vshopt
+app.jdbc.username=vshopt_user
+app.jdbc.password=change_me
+app.jdbc.driver=org.postgresql.Driver
+
+# Para usar variáveis de ambiente, defina APP_JDBC_URL, APP_JDBC_USERNAME, APP_JDBC_PASSWORD
+# e deixe `application.properties` com placeholders.
