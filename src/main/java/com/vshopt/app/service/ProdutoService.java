@@ -6,15 +6,14 @@ import org.springframework.stereotype.Service;
 
 import com.vshopt.app.model.Produto;
 import com.vshopt.app.repository.ProdutoRepository;
-import com.vshopt.app.repository.ProdutoRepositoryImpl;
 
 @Service
 public class ProdutoService {
 
     private final ProdutoRepository produtoRepository;
 
-    public ProdutoService() {
-        this.produtoRepository = new ProdutoRepositoryImpl();
+    public ProdutoService(ProdutoRepository produtoRepository) {
+        this.produtoRepository = produtoRepository;
     }
 
     public List<Produto> listarProdutos(String categoria, String ordenacao) {
