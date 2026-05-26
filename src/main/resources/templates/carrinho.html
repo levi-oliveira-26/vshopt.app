@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho de Compras | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/carrinho.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/biblioteca">Biblioteca</a>
+                <a href="/carrinho">Carrinho</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="carrinho-container">
+        <section class="carrinho-header">
+            <div class="container">
+                <h1>Carrinho de Compras</h1>
+            </div>
+        </section>
+
+        <section class="carrinho-content">
+            <div class="container carrinho-layout">
+                <div class="carrinho-items">
+                    <div class="carrinho-item">
+                        <div class="item-image">
+                            <img src="/images/placeholder-ebook.png" alt="Mixing Essentials">
+                        </div>
+                        <div class="item-info">
+                            <h3>Mixing Essentials 2024</h3>
+                            <p class="item-autor">por Studio Pro</p>
+                            <p class="item-descricao">Guia completo sobre técnicas modernas de mixagem</p>
+                        </div>
+                        <div class="item-quantidade">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <span class="preco">R$ 99,90</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-remove" aria-label="Remover do carrinho">
+                                <span>✕</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carrinho-item">
+                        <div class="item-image">
+                            <img src="/images/placeholder-plugin.png" alt="Reverb Pro">
+                        </div>
+                        <div class="item-info">
+                            <h3>Reverb Pro VST Bundle</h3>
+                            <p class="item-autor">por Audio Tech</p>
+                            <p class="item-descricao">Plugin profissional de reverberação com 200+ presets</p>
+                        </div>
+                        <div class="item-quantidade">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="2" min="1" class="qty-input">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <span class="preco">R$ 249,80</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-remove" aria-label="Remover do carrinho">
+                                <span>✕</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="carrinho-item">
+                        <div class="item-image">
+                            <img src="/images/placeholder-sample.png" alt="Hip Hop Drums">
+                        </div>
+                        <div class="item-info">
+                            <h3>Hip Hop Drums 2024 Collection</h3>
+                            <p class="item-autor">por Sound Designers</p>
+                            <p class="item-descricao">5000+ samples de bateria para hip hop, trap e R&B</p>
+                        </div>
+                        <div class="item-quantidade">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="1" min="1" class="qty-input">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <div class="item-preco">
+                            <span class="preco">R$ 79,90</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn-remove" aria-label="Remover do carrinho">
+                                <span>✕</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="carrinho-resumo">
+                    <div class="resumo-card">
+                        <h2>Resumo do Carrinho</h2>
+
+                        <div class="resumo-row">
+                            <span>Subtotal:</span>
+                            <span class="valor">R$ 429,60</span>
+                        </div>
+
+                        <div class="resumo-row">
+                            <span>Desconto (10%):</span>
+                            <span class="valor desconto">-R$ 42,96</span>
+                        </div>
+
+                        <div class="resumo-row">
+                            <label for="coupon">Cupom de Desconto:</label>
+                            <div class="coupon-input">
+                                <input type="text" id="coupon" placeholder="VSHOPT10" class="form-input">
+                                <button class="btn btn-outline">Aplicar</button>
+                            </div>
+                        </div>
+
+                        <div class="resumo-divider"></div>
+
+                        <div class="resumo-total">
+                            <span>Total:</span>
+                            <span class="valor-total">R$ 386,64</span>
+                        </div>
+
+                        <button class="btn btn-primary btn-block">Ir para o Checkout</button>
+                        <button class="btn btn-outline btn-block">Continuar Comprando</button>
+
+                        <div class="resumo-info">
+                            <p>✓ Acesso imediato após a compra</p>
+                            <p>✓ Garantia de 30 dias</p>
+                            <p>✓ Suporte técnico 24/7</p>
+                        </div>
+                    </div>
+
+                    <div class="produtos-relacionados">
+                        <h3>Você também pode gostar</h3>
+                        <div class="produto-mini">
+                            <img src="/images/placeholder-curso.png" alt="Curso">
+                            <p>Produção Musical Avançada</p>
+                            <span class="preco">R$ 199,90</span>
+                            <button class="btn btn-outline btn-small">Adicionar</button>
+                        </div>
+                        <div class="produto-mini">
+                            <img src="/images/placeholder-preset.png" alt="Presets">
+                            <p>Synth Presets Pro</p>
+                            <span class="preco">R$ 49,90</span>
+                            <button class="btn btn-outline btn-small">Adicionar</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="carrinho-vazio" style="display: none;">
+                <div class="empty-state">
+                    <div class="empty-icon">🛒</div>
+                    <h2>Seu carrinho está vazio</h2>
+                    <p>Comece a explorar nossos produtos e adicione itens ao carrinho</p>
+                    <a href="/" class="btn btn-primary">Explorar Produtos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/carrinho.js}"></script>
+</body>
+</html>

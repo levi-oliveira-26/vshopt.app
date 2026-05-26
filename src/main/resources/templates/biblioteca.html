@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Biblioteca | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/biblioteca.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/biblioteca">Minha Biblioteca</a>
+                <a href="/carrinho">Carrinho</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="biblioteca-container">
+        <section class="biblioteca-header">
+            <div class="container">
+                <h1>Minha Biblioteca</h1>
+                <p>Seus produtos, e-books, cursos e plugins adquiridos</p>
+            </div>
+        </section>
+
+        <section class="biblioteca-content">
+            <div class="container">
+                <div class="biblioteca-filters">
+                    <input type="text" class="search-input" placeholder="Buscar na biblioteca..." id="searchBiblioteca">
+                    <select class="filter-select" id="filterTipo">
+                        <option value="">Todos os tipos</option>
+                        <option value="ebook">E-books</option>
+                        <option value="curso">Cursos</option>
+                        <option value="plugin">Plugins</option>
+                        <option value="sample">Sample Packs</option>
+                        <option value="preset">Presets</option>
+                    </select>
+                    <select class="filter-select" id="filterOrdenacao">
+                        <option value="data-desc">Mais recentes</option>
+                        <option value="nome-asc">A - Z</option>
+                        <option value="nome-desc">Z - A</option>
+                    </select>
+                </div>
+
+                <div class="biblioteca-grid">
+                    <div class="biblioteca-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-ebook.png" alt="Mixing Essentials">
+                            <span class="card-badge tipo-ebook">E-book</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Mixing Essentials 2024</h3>
+                            <p class="card-autor">por Studio Pro</p>
+                            <div class="card-meta">
+                                <span class="data-compra">Adquirido em 15 de maio</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-secondary">Baixar</button>
+                                <button class="btn btn-outline">Visualizar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biblioteca-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-curso.png" alt="Produção Musical Avançada">
+                            <span class="card-badge tipo-curso">Curso</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Produção Musical Avançada</h3>
+                            <p class="card-autor">por Audio Masters</p>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <p class="progress-text">65% completo</p>
+                            <div class="card-actions">
+                                <button class="btn btn-primary">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biblioteca-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-plugin.png" alt="Reverb Pro">
+                            <span class="card-badge tipo-plugin">Plugin</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Reverb Pro VST</h3>
+                            <p class="card-autor">por Audio Tech</p>
+                            <div class="card-meta">
+                                <span class="versao">v2.1</span>
+                                <span class="status-ativo">Ativo</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-secondary">Baixar Atualização</button>
+                                <button class="btn btn-outline">Suporte</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biblioteca-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-sample.png" alt="Hip Hop Drums">
+                            <span class="card-badge tipo-sample">Sample Pack</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Hip Hop Drums 2024</h3>
+                            <p class="card-autor">por Sound Designers</p>
+                            <div class="card-meta">
+                                <span class="tamanho">385 MB</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-secondary">Baixar</button>
+                                <button class="btn btn-outline">Preview</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biblioteca-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-preset.png" alt="Synth Presets">
+                            <span class="card-badge tipo-preset">Presets</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Synth Presets Pro</h3>
+                            <p class="card-autor">por Preset Masters</p>
+                            <div class="card-meta">
+                                <span>150+ presets</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-secondary">Baixar</button>
+                                <button class="btn btn-outline">Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biblioteca-empty" style="display: none;">
+                    <div class="empty-icon">📚</div>
+                    <h2>Nenhum produto encontrado</h2>
+                    <p>Sua biblioteca está vazia. Comece a explorar nossos produtos!</p>
+                    <a href="/" class="btn btn-primary">Explorar Produtos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/biblioteca.js}"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Central de Suporte | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/suporte.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/suporte">Suporte</a>
+                <a href="/carrinho">Carrinho</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="suporte-container">
+        <section class="suporte-hero">
+            <div class="container">
+                <h1>Central de Suporte VSHOPT</h1>
+                <p>Como podemos ajudá-lo?</p>
+                <div class="search-suporte">
+                    <input type="text" placeholder="Busque por ajuda..." class="search-input">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="suporte-channels">
+            <div class="container">
+                <div class="channels-grid">
+                    <div class="channel-card">
+                        <div class="channel-icon">💬</div>
+                        <h3>Chat ao Vivo</h3>
+                        <p>Converse com um agente em tempo real</p>
+                        <button class="btn btn-outline">Iniciar Chat</button>
+                        <p class="channel-status">Disponível 24/7</p>
+                    </div>
+
+                    <div class="channel-card">
+                        <div class="channel-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>Envie sua dúvida por email</p>
+                        <button class="btn btn-outline">Enviar Email</button>
+                        <p class="channel-status">Resposta em até 2 horas</p>
+                    </div>
+
+                    <div class="channel-card">
+                        <div class="channel-icon">📞</div>
+                        <h3>Telefone</h3>
+                        <p>Ligue para nosso suporte</p>
+                        <button class="btn btn-outline">Agendar Ligação</button>
+                        <p class="channel-status">Seg-Sex: 9h-18h</p>
+                    </div>
+
+                    <div class="channel-card">
+                        <div class="channel-icon">📝</div>
+                        <h3>Ticket</h3>
+                        <p>Crie um ticket de suporte</p>
+                        <button class="btn btn-outline">Novo Ticket</button>
+                        <p class="channel-status">Acompanhamento em tempo real</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="suporte-content">
+            <div class="container">
+                <div class="suporte-layout">
+                    <!-- FAQ -->
+                    <div class="faq-section">
+                        <h2>Perguntas Frequentes</h2>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Como faço para resetar minha senha?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Para resetar sua senha, clique em "Esqueci minha senha" na página de login. Você receberá um email com instruções para criar uma nova senha. Siga o link fornecido no email e defina sua nova senha.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Como baixo meus produtos após a compra?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Após a compra, você receberá um email de confirmação com links para download. Você também pode acessar sua Biblioteca para ver todos os seus produtos adquiridos e baixá-los a qualquer momento.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Qual é a política de reembolso?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Oferecemos garantia de 30 dias em todos os produtos. Se não estiver satisfeito, você pode solicitar um reembolso dentro de 30 dias da compra. Basta entrar em contato com nosso suporte com seu número de pedido.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Posso compartilhar minha conta com outras pessoas?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Nossas licenças são pessoais e não devem ser compartilhadas. O compartilhamento de contas viola nossos termos de serviço. Cada usuário deve ter sua própria conta e licença.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Como atualizo meus plugins?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Você receberá notificações sobre atualizações em sua biblioteca. Você pode baixar a versão mais recente do plugin a qualquer momento. Recomendamos sempre usar a versão mais recente para melhor compatibilidade e segurança.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-header">
+                                <span class="faq-title">Qual é a compatibilidade dos plugins?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-content">
+                                <p>Nossos plugins são compatíveis com Windows e macOS. Cada produto especifica suas versões suportadas de DAW (como Ableton, Logic Pro, FL Studio, etc.). Verifique a página do produto para detalhes específicos de compatibilidade.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categorias de Ajuda -->
+                    <aside class="help-categories">
+                        <h2>Categorias de Ajuda</h2>
+
+                        <div class="category-group">
+                            <h3>Conta & Login</h3>
+                            <ul>
+                                <li><a href="#faq">Criar uma conta</a></li>
+                                <li><a href="#faq">Resetar senha</a></li>
+                                <li><a href="#faq">Atualizar perfil</a></li>
+                                <li><a href="#faq">Alterar email</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category-group">
+                            <h3>Compras & Pedidos</h3>
+                            <ul>
+                                <li><a href="#faq">Como comprar</a></li>
+                                <li><a href="#faq">Rastrear pedido</a></li>
+                                <li><a href="#faq">Cancelar pedido</a></li>
+                                <li><a href="#faq">Faturas & Recibos</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category-group">
+                            <h3>Downloads & Licenças</h3>
+                            <ul>
+                                <li><a href="#faq">Baixar produtos</a></li>
+                                <li><a href="#faq">Ativar licenças</a></li>
+                                <li><a href="#faq">Licença de múltiplos computadores</a></li>
+                                <li><a href="#faq">Transferir licença</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category-group">
+                            <h3>Produtos & Suporte Técnico</h3>
+                            <ul>
+                                <li><a href="#faq">Instalar plugins</a></li>
+                                <li><a href="#faq">Resolver problemas</a></li>
+                                <li><a href="#faq">Compatibilidade</a></li>
+                                <li><a href="#faq">Feedback & Sugestões</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="category-group">
+                            <h3>Devolução & Reembolso</h3>
+                            <ul>
+                                <li><a href="#faq">Política de reembolso</a></li>
+                                <li><a href="#faq">Solicitar reembolso</a></li>
+                                <li><a href="#faq">Reembolso pendente</a></li>
+                                <li><a href="#faq">Devolução de produtos</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Ticket Form -->
+                <section class="ticket-form-section">
+                    <h2>Não encontrou a resposta?</h2>
+                    <p>Envie uma mensagem para nosso suporte e entraremos em contato em breve</p>
+
+                    <form class="ticket-form">
+                        <div class="form-group">
+                            <label for="assunto">Assunto</label>
+                            <select id="assunto" class="form-input" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="tecnico">Problema Técnico</option>
+                                <option value="compra">Dúvida sobre Compra</option>
+                                <option value="download">Problema de Download</option>
+                                <option value="licenca">Questão de Licença</option>
+                                <option value="reembolso">Reembolso/Devolução</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="produto">Produto (opcional)</label>
+                            <input type="text" id="produto" class="form-input" placeholder="Qual produto está relacionado?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descricao">Descrição do Problema</label>
+                            <textarea id="descricao" class="form-input" rows="6" placeholder="Descreva seu problema com detalhes..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="anexo">Anexar Arquivo (opcional)</label>
+                            <input type="file" id="anexo" class="form-input">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Enviar Ticket</button>
+                            <button type="reset" class="btn btn-outline">Limpar</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Status Page -->
+                <section class="status-section">
+                    <h2>Status dos Serviços</h2>
+                    <div class="status-list">
+                        <div class="status-item operational">
+                            <span class="status-indicator"></span>
+                            <span class="status-name">Loja Online</span>
+                            <span class="status-text">Operacional</span>
+                        </div>
+                        <div class="status-item operational">
+                            <span class="status-indicator"></span>
+                            <span class="status-name">Sistema de Downloads</span>
+                            <span class="status-text">Operacional</span>
+                        </div>
+                        <div class="status-item operational">
+                            <span class="status-indicator"></span>
+                            <span class="status-name">Suporte ao Cliente</span>
+                            <span class="status-text">Operacional</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/suporte.js}"></script>
+</body>
+</html>

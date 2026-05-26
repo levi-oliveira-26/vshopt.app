@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ofertas e Promoções | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/ofertas.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/ofertas">Ofertas</a>
+                <a href="/carrinho">Carrinho</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="ofertas-container">
+        <section class="ofertas-banner">
+            <div class="banner-content">
+                <h1>Ofertas Especiais</h1>
+                <p>Aproveite nossos descontos exclusivos e promoções limitadas</p>
+                <div class="countdown">
+                    <span class="label">Oferta termina em:</span>
+                    <div class="timer">
+                        <span class="time-unit">
+                            <span class="time-value">5</span>
+                            <span class="time-label">dias</span>
+                        </span>
+                        <span class="separator">:</span>
+                        <span class="time-unit">
+                            <span class="time-value">12</span>
+                            <span class="time-label">horas</span>
+                        </span>
+                        <span class="separator">:</span>
+                        <span class="time-unit">
+                            <span class="time-value">34</span>
+                            <span class="time-label">min</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ofertas-content">
+            <div class="container">
+                <div class="ofertas-filters">
+                    <button class="filter-btn active" data-filter="todas">Todas</button>
+                    <button class="filter-btn" data-filter="ebooks">E-books</button>
+                    <button class="filter-btn" data-filter="cursos">Cursos</button>
+                    <button class="filter-btn" data-filter="plugins">Plugins</button>
+                    <button class="filter-btn" data-filter="bundles">Bundles</button>
+                </div>
+
+                <div class="ofertas-grid">
+                    <!-- Flash Sale Item -->
+                    <div class="oferta-card flash-sale">
+                        <div class="badge-container">
+                            <span class="badge badge-flash">⚡ Flash Sale</span>
+                            <span class="badge badge-desconto">50% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-ebook.png" alt="Mixing Essentials">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mixing Essentials 2024</h3>
+                            <p class="card-autor">por Studio Pro</p>
+                            <div class="preco-container">
+                                <span class="preco-original">R$ 199,90</span>
+                                <span class="preco-desconto">R$ 99,90</span>
+                            </div>
+                            <div class="economia">
+                                Economize: R$ 100,00
+                            </div>
+                            <button class="btn btn-primary btn-block">Adicionar ao Carrinho</button>
+                            <p class="tempo-restante">Oferta termina em 2 horas</p>
+                        </div>
+                    </div>
+
+                    <!-- Bundle Deal -->
+                    <div class="oferta-card bundle-deal">
+                        <div class="badge-container">
+                            <span class="badge badge-bundle">🎁 Bundle</span>
+                            <span class="badge badge-desconto">30% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-bundle.png" alt="Pro Production Bundle">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pro Production Bundle</h3>
+                            <p class="card-autor">Pacote completo</p>
+                            <ul class="bundle-items">
+                                <li>Mixing Essentials</li>
+                                <li>Reverb Pro VST</li>
+                                <li>Sample Packs 2024</li>
+                            </ul>
+                            <div class="preco-container">
+                                <span class="preco-original">R$ 499,70</span>
+                                <span class="preco-desconto">R$ 349,79</span>
+                            </div>
+                            <button class="btn btn-primary btn-block">Comprar Bundle</button>
+                        </div>
+                    </div>
+
+                    <!-- Early Bird -->
+                    <div class="oferta-card early-bird">
+                        <div class="badge-container">
+                            <span class="badge badge-early">🌅 Early Bird</span>
+                            <span class="badge badge-desconto">40% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-curso.png" alt="Produção Musical Avançada">
+                        </div>
+                        <div class="card-content">
+                            <h3>Produção Musical Avançada</h3>
+                            <p class="card-autor">Acesso por 1 ano</p>
+                            <div class="preco-container">
+                                <span class="preco-original">R$ 299,90</span>
+                                <span class="preco-desconto">R$ 179,94</span>
+                            </div>
+                            <p class="validade">Válido até 31 de maio</p>
+                            <button class="btn btn-primary btn-block">Aproveitar Oferta</button>
+                        </div>
+                    </div>
+
+                    <!-- Buy More Save More -->
+                    <div class="oferta-card">
+                        <div class="badge-container">
+                            <span class="badge badge-desconto">até 25% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-sample.png" alt="Sample Packs">
+                        </div>
+                        <div class="card-content">
+                            <h3>Sample Packs Collection</h3>
+                            <p class="card-autor">Multiplos gêneros</p>
+                            <div class="niveis-desconto">
+                                <p>Compre 1: R$ 79,90</p>
+                                <p>Compre 2: R$ 139,90 (12% desc)</p>
+                                <p>Compre 3+: R$ 179,90 (25% desc)</p>
+                            </div>
+                            <button class="btn btn-primary btn-block">Ver Opções</button>
+                        </div>
+                    </div>
+
+                    <!-- Seasonal Offer -->
+                    <div class="oferta-card seasonal">
+                        <div class="badge-container">
+                            <span class="badge badge-seasonal">☀️ Oferta de Estação</span>
+                            <span class="badge badge-desconto">35% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-plugin.png" alt="Synth Presets">
+                        </div>
+                        <div class="card-content">
+                            <h3>Synth Presets Pro</h3>
+                            <p class="card-autor">150+ presets exclusivos</p>
+                            <div class="preco-container">
+                                <span class="preco-original">R$ 149,90</span>
+                                <span class="preco-desconto">R$ 97,43</span>
+                            </div>
+                            <button class="btn btn-primary btn-block">Adicionar ao Carrinho</button>
+                            <p class="tempo-restante">Válido até 30 de junho</p>
+                        </div>
+                    </div>
+
+                    <!-- First Time Buyer -->
+                    <div class="oferta-card">
+                        <div class="badge-container">
+                            <span class="badge badge-novo">🎉 Primeira Compra</span>
+                            <span class="badge badge-desconto">20% OFF</span>
+                        </div>
+                        <div class="card-image">
+                            <img src="/images/placeholder-ebook.png" alt="Sound Design Basics">
+                        </div>
+                        <div class="card-content">
+                            <h3>Sound Design Basics</h3>
+                            <p class="card-autor">Para iniciantes</p>
+                            <div class="preco-container">
+                                <span class="preco-original">R$ 89,90</span>
+                                <span class="preco-desconto">R$ 71,92</span>
+                            </div>
+                            <p class="restricao">*Válido apenas para novos clientes</p>
+                            <button class="btn btn-primary btn-block">Usar Cupom</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <section class="newsletter-section">
+                    <div class="newsletter-content">
+                        <h2>Não perca nenhuma oferta!</h2>
+                        <p>Inscreva-se para receber ofertas exclusivas por email</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Seu email" class="form-input" required>
+                            <button type="submit" class="btn btn-primary">Inscrever-se</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/ofertas.js}"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Desejos | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/lista-desejos.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/biblioteca">Biblioteca</a>
+                <a href="/lista-desejos">Desejos</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="desejos-container">
+        <section class="desejos-header">
+            <div class="container">
+                <h1>Minha Lista de Desejos</h1>
+                <p>Produtos que você deseja adquirir no futuro</p>
+            </div>
+        </section>
+
+        <section class="desejos-content">
+            <div class="container">
+                <div class="desejos-toolbar">
+                    <div class="toolbar-left">
+                        <span class="total-items">5 itens</span>
+                        <div class="view-options">
+                            <button class="view-btn grid-view active" title="Visualização em grade">
+                                ☷
+                            </button>
+                            <button class="view-btn list-view" title="Visualização em lista">
+                                ☰
+                            </button>
+                        </div>
+                    </div>
+                    <div class="toolbar-right">
+                        <input type="text" class="search-input" placeholder="Buscar na lista...">
+                        <select class="sort-select">
+                            <option value="mais-recente">Mais recentes</option>
+                            <option value="menor-preco">Menor preço</option>
+                            <option value="maior-preco">Maior preço</option>
+                            <option value="nome">Nome (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="desejos-grid">
+                    <div class="desejo-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-plugin.png" alt="Nexus VST">
+                            <button class="btn-heart liked" title="Remover da lista">❤️</button>
+                            <div class="card-overlay">
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Nexus VST 3 Pro</h3>
+                            <p class="card-autor">por reFX</p>
+                            <div class="card-preco">
+                                <span class="preco-atual">R$ 449,90</span>
+                                <span class="preço-original">R$ 599,90</span>
+                            </div>
+                            <p class="card-desconto">25% de desconto</p>
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="reviews">(128 reviews)</span>
+                            </div>
+                            <div class="card-info">
+                                <span class="availability em-estoque">Em estoque</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-block">Ver Detalhes</button>
+                                <button class="btn btn-outline btn-small">Compartilhar</button>
+                            </div>
+                        </div>
+                        <div class="card-meta">
+                            <p class="added-date">Adicionado em 15 de maio</p>
+                        </div>
+                    </div>
+
+                    <div class="desejo-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-curso.png" alt="Advanced Mastering">
+                            <button class="btn-heart liked" title="Remover da lista">❤️</button>
+                            <div class="card-overlay">
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Advanced Mastering Techniques</h3>
+                            <p class="card-autor">por Mastering Academy</p>
+                            <div class="card-preco">
+                                <span class="preco-atual">R$ 349,90</span>
+                            </div>
+                            <div class="card-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="reviews">(87 reviews)</span>
+                            </div>
+                            <div class="card-info">
+                                <span class="availability em-estoque">Disponível</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-block">Ver Detalhes</button>
+                                <button class="btn btn-outline btn-small">Compartilhar</button>
+                            </div>
+                        </div>
+                        <div class="card-meta">
+                            <p class="added-date">Adicionado em 12 de maio</p>
+                        </div>
+                    </div>
+
+                    <div class="desejo-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-sample.png" alt="Orchestral Strings">
+                            <button class="btn-heart liked" title="Remover da lista">❤️</button>
+                            <div class="card-overlay">
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Orchestral Strings Pro</h3>
+                            <p class="card-autor">por Sample Library</p>
+                            <div class="card-preco">
+                                <span class="preco-atual">R$ 299,90</span>
+                                <span class="preço-original">R$ 399,90</span>
+                            </div>
+                            <p class="card-desconto">25% de desconto</p>
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="reviews">(256 reviews)</span>
+                            </div>
+                            <div class="card-info">
+                                <span class="availability em-estoque">Em estoque</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-block">Ver Detalhes</button>
+                                <button class="btn btn-outline btn-small">Compartilhar</button>
+                            </div>
+                        </div>
+                        <div class="card-meta">
+                            <p class="added-date">Adicionado em 10 de maio</p>
+                        </div>
+                    </div>
+
+                    <div class="desejo-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-ebook.png" alt="Sound Design Bible">
+                            <button class="btn-heart liked" title="Remover da lista">❤️</button>
+                            <div class="card-overlay">
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Sound Design Bible</h3>
+                            <p class="card-autor">por Design Masters</p>
+                            <div class="card-preco">
+                                <span class="preco-atual">R$ 149,90</span>
+                            </div>
+                            <div class="card-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="reviews">(142 reviews)</span>
+                            </div>
+                            <div class="card-info">
+                                <span class="availability em-estoque">Disponível</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-block">Ver Detalhes</button>
+                                <button class="btn btn-outline btn-small">Compartilhar</button>
+                            </div>
+                        </div>
+                        <div class="card-meta">
+                            <p class="added-date">Adicionado em 8 de maio</p>
+                        </div>
+                    </div>
+
+                    <div class="desejo-card">
+                        <div class="card-image">
+                            <img src="/images/placeholder-preset.png" alt="Serum Wavetables">
+                            <button class="btn-heart liked" title="Remover da lista">❤️</button>
+                            <div class="card-overlay">
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Serum Wavetables Mega Pack</h3>
+                            <p class="card-autor">por XFer Records</p>
+                            <div class="card-preco">
+                                <span class="preco-atual">R$ 199,90</span>
+                                <span class="preço-original">R$ 249,90</span>
+                            </div>
+                            <p class="card-desconto">20% de desconto</p>
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="reviews">(98 reviews)</span>
+                            </div>
+                            <div class="card-info">
+                                <span class="availability em-estoque">Em estoque</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-block">Ver Detalhes</button>
+                                <button class="btn btn-outline btn-small">Compartilhar</button>
+                            </div>
+                        </div>
+                        <div class="card-meta">
+                            <p class="added-date">Adicionado em 5 de maio</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista vazia -->
+                <div class="desejos-empty" style="display: none;">
+                    <div class="empty-state">
+                        <div class="empty-icon">❤️</div>
+                        <h2>Sua lista de desejos está vazia</h2>
+                        <p>Comece a adicionar produtos à sua lista!</p>
+                        <a href="/" class="btn btn-primary">Explorar Produtos</a>
+                    </div>
+                </div>
+
+                <!-- Resumo de Preços -->
+                <section class="desejos-resumo">
+                    <div class="resumo-card">
+                        <h2>Resumo da Lista</h2>
+                        <div class="resumo-info">
+                            <p><strong>Total de produtos:</strong> 5</p>
+                            <p><strong>Valor total:</strong> R$ 1.449,50</p>
+                            <p><strong>Economia em descontos:</strong> R$ 249,70</p>
+                        </div>
+                        <button class="btn btn-primary btn-block">Comprar Tudo</button>
+                        <button class="btn btn-outline btn-block">Compartilhar Lista</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/lista-desejos.js}"></script>
+</body>
+</html>

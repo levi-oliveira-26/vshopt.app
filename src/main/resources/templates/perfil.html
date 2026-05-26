@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Perfil | VSHOPT</title>
+    <link rel="stylesheet" th:href="@{/index.css}" />
+    <link rel="stylesheet" th:href="@{/css/perfil.css}" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">VSHOPT</a>
+            <nav class="nav-links">
+                <a href="/">Início</a>
+                <a href="/biblioteca">Biblioteca</a>
+                <a href="/carrinho">Carrinho</a>
+                <a href="/perfil">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="perfil-container">
+        <section class="perfil-header-bg"></section>
+        
+        <section class="perfil-content">
+            <div class="container">
+                <div class="perfil-layout">
+                    <aside class="perfil-sidebar">
+                        <div class="perfil-avatar-section">
+                            <img src="/images/avatar-placeholder.png" alt="Avatar" class="perfil-avatar">
+                            <button class="btn btn-small btn-outline">Alterar foto</button>
+                        </div>
+
+                        <div class="perfil-menu">
+                            <button class="menu-item active" data-tab="informacoes">
+                                <span class="icon">👤</span> Informações
+                            </button>
+                            <button class="menu-item" data-tab="endereco">
+                                <span class="icon">📍</span> Endereços
+                            </button>
+                            <button class="menu-item" data-tab="pagamento">
+                                <span class="icon">💳</span> Pagamento
+                            </button>
+                            <button class="menu-item" data-tab="pedidos">
+                                <span class="icon">📦</span> Pedidos
+                            </button>
+                            <button class="menu-item" data-tab="notificacoes">
+                                <span class="icon">🔔</span> Notificações
+                            </button>
+                            <button class="menu-item" data-tab="seguranca">
+                                <span class="icon">🔒</span> Segurança
+                            </button>
+                        </div>
+
+                        <button class="btn btn-outline btn-block">Sair da Conta</button>
+                    </aside>
+
+                    <main class="perfil-main">
+                        <!-- Tab Informações -->
+                        <div class="tab-content active" id="tab-informacoes">
+                            <div class="form-section">
+                                <h2>Informações Pessoais</h2>
+                                <form class="form-grid">
+                                    <div class="form-group">
+                                        <label for="nome">Nome Completo</label>
+                                        <input type="text" id="nome" name="nome" value="João Silva Santos" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" value="joao@example.com" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefone">Telefone</label>
+                                        <input type="tel" id="telefone" name="telefone" value="(11) 98765-4321" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="datanascimento">Data de Nascimento</label>
+                                        <input type="date" id="datanascimento" name="datanascimento" value="1990-05-15" class="form-input">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="bio">Biografia</label>
+                                        <textarea id="bio" name="bio" class="form-input" rows="4">Produtor musical e engenheiro de áudio com experiência em diversos gêneros.</textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                                        <button type="button" class="btn btn-outline">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Tab Endereços -->
+                        <div class="tab-content" id="tab-endereco">
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Meus Endereços</h2>
+                                    <button class="btn btn-primary btn-small">+ Adicionar Endereço</button>
+                                </div>
+
+                                <div class="endereco-list">
+                                    <div class="endereco-card">
+                                        <div class="endereco-header">
+                                            <h3>Endereço Residencial</h3>
+                                            <input type="radio" name="endereco-padrao" checked>
+                                            <label>Principal</label>
+                                        </div>
+                                        <p>Rua das Flores, 123</p>
+                                        <p>Apto 456 - São Paulo, SP 01234-567</p>
+                                        <div class="endereco-actions">
+                                            <button class="btn btn-outline btn-small">Editar</button>
+                                            <button class="btn btn-outline btn-small">Remover</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="endereco-card">
+                                        <div class="endereco-header">
+                                            <h3>Endereço Comercial</h3>
+                                            <input type="radio" name="endereco-padrao">
+                                            <label>Alterno</label>
+                                        </div>
+                                        <p>Av. Paulista, 1000</p>
+                                        <p>Sala 200 - São Paulo, SP 01311-100</p>
+                                        <div class="endereco-actions">
+                                            <button class="btn btn-outline btn-small">Editar</button>
+                                            <button class="btn btn-outline btn-small">Remover</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Pagamento -->
+                        <div class="tab-content" id="tab-pagamento">
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>Métodos de Pagamento</h2>
+                                    <button class="btn btn-primary btn-small">+ Adicionar Cartão</button>
+                                </div>
+
+                                <div class="pagamento-list">
+                                    <div class="pagamento-card">
+                                        <div class="card-icon">💳</div>
+                                        <div class="card-info">
+                                            <h3>Visa - Final 4242</h3>
+                                            <p>Válido até 12/2026</p>
+                                        </div>
+                                        <div class="card-principal">Padrão</div>
+                                        <button class="btn btn-outline btn-small">Remover</button>
+                                    </div>
+
+                                    <div class="pagamento-card">
+                                        <div class="card-icon">💳</div>
+                                        <div class="card-info">
+                                            <h3>Mastercard - Final 8765</h3>
+                                            <p>Válido até 08/2025</p>
+                                        </div>
+                                        <button class="btn btn-outline btn-small">Definir como padrão</button>
+                                        <button class="btn btn-outline btn-small">Remover</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Pedidos -->
+                        <div class="tab-content" id="tab-pedidos">
+                            <div class="form-section">
+                                <h2>Histórico de Pedidos</h2>
+                                
+                                <div class="pedidos-list">
+                                    <div class="pedido-item">
+                                        <div class="pedido-header">
+                                            <h3>Pedido #12345</h3>
+                                            <span class="status-badge status-entregue">Entregue</span>
+                                        </div>
+                                        <p class="pedido-data">20 de maio de 2024</p>
+                                        <p class="pedido-total">Total: R$ 129,90</p>
+                                        <button class="btn btn-outline btn-small">Ver Detalhes</button>
+                                    </div>
+
+                                    <div class="pedido-item">
+                                        <div class="pedido-header">
+                                            <h3>Pedido #12346</h3>
+                                            <span class="status-badge status-processando">Processando</span>
+                                        </div>
+                                        <p class="pedido-data">22 de maio de 2024</p>
+                                        <p class="pedido-total">Total: R$ 249,90</p>
+                                        <button class="btn btn-outline btn-small">Rastrear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Notificações -->
+                        <div class="tab-content" id="tab-notificacoes">
+                            <div class="form-section">
+                                <h2>Preferências de Notificações</h2>
+                                
+                                <div class="notification-group">
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h3>Notificações de Pedidos</h3>
+                                            <p>Receba atualizações sobre seus pedidos</p>
+                                        </div>
+                                        <input type="checkbox" class="toggle-switch" checked>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h3>Ofertas Exclusivas</h3>
+                                            <p>Promoções e descontos especiais</p>
+                                        </div>
+                                        <input type="checkbox" class="toggle-switch" checked>
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h3>Novos Produtos</h3>
+                                            <p>Notificação sobre novos lançamentos</p>
+                                        </div>
+                                        <input type="checkbox" class="toggle-switch">
+                                    </div>
+
+                                    <div class="notification-item">
+                                        <div class="notification-info">
+                                            <h3>Atualizações de Plugins</h3>
+                                            <p>Novidades sobre seus plugins instalados</p>
+                                        </div>
+                                        <input type="checkbox" class="toggle-switch" checked>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab Segurança -->
+                        <div class="tab-content" id="tab-seguranca">
+                            <div class="form-section">
+                                <h2>Segurança da Conta</h2>
+                                
+                                <div class="security-section">
+                                    <h3>Alterar Senha</h3>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="senha-atual">Senha Atual</label>
+                                            <input type="password" id="senha-atual" class="form-input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="senha-nova">Nova Senha</label>
+                                            <input type="password" id="senha-nova" class="form-input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="senha-confirma">Confirmar Senha</label>
+                                            <input type="password" id="senha-confirma" class="form-input">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Atualizar Senha</button>
+                                    </form>
+                                </div>
+
+                                <div class="security-section">
+                                    <h3>Autenticação em Duas Etapas</h3>
+                                    <p>Adicione uma camada extra de segurança à sua conta</p>
+                                    <button class="btn btn-outline">Ativar 2FA</button>
+                                </div>
+
+                                <div class="security-section">
+                                    <h3>Dispositivos Conectados</h3>
+                                    <div class="device-item">
+                                        <div class="device-info">
+                                            <p class="device-name">Windows - Chrome</p>
+                                            <p class="device-meta">Último acesso: 2 horas atrás</p>
+                                        </div>
+                                        <span class="device-atual">Dispositivo atual</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 VSHOPT. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/perfil.js}"></script>
+</body>
+</html>
